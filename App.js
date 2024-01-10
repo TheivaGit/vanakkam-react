@@ -1,3 +1,7 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
+
 
 // Javascript hello world 
 // const heading = document.createElement("h1");
@@ -31,7 +35,7 @@
 
 const parent = React.createElement("div", {id: "parent"},[
                 React.createElement("div", {id: "child"}, 
-                [React.createElement("h1", {id: "heading"}, "Nested H1"), 
+                [React.createElement("h1", {id: "heading"}, "Nested H1 🚀"), 
                 React.createElement("h2", {}, "Nested H2")
                 ]),
 
