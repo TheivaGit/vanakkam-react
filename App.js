@@ -1,51 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 
+// JSX Heading - JSX is not HTML in javascript - converted to component now
 
+const Jsxheading = () => (<h1 className="head"> 
+                    Vanakkam React from JSX 🚀
+                    </h1>);
 
-// Javascript hello world 
-// const heading = document.createElement("h1");
-// heading.innerHTML = "<b>Hello world! from JavaScript</b>";
+// React funtional components
+const HeadingComponent = () => {
+    return <h1>Vanakkam react functional component</h1>
+}
 
-// const root = document.getElementById("javscriptRoot");
-// root.appendChild(heading);
+const HeadingJSXComponentShorthand = () => <h1 className="shorthand">Vanakkam react functional shorthand</h1>;
 
+// React component using normal JS function
+const NormalJSComp = function () {
+    return (
+        <h1>
+            hello i'm in normal JS functional react component
+        </h1>
+    )
+}
 
-//React Hello world
-// const reactHeading = React.createElement("h1", {id:"heading", xyz:"hello"}, "Hello World! from React");
-// console.log("reactHeading", reactHeading);
-// const reactRoot = ReactDOM.createRoot(document.getElementById("reactRoot"));
-// console.log("reactRoot", reactRoot);
-// reactRoot.render(reactHeading);
-
-
-// Multilevel/Nested tags 
-{/* <div class="parent">
-    <div class="child">
-        <h1></h1>
-         <h2></h2>
+const HeadingJSXComponentShorthand2 = () => (
+    <div id="container">
+        {/* Component composition */}
+        <Jsxheading />
+        <HeadingComponent / >
+        <HeadingJSXComponentShorthand />
+        <h1 className="shorthand2">Vanakkam react functional component shorthand2</h1>
+        <NormalJSComp />
     </div>
-</div>
-<div class="parent">
-    <div class="child2">
-        <h1></h1>
-        <h2></h2>
-    </div>
-</div> */}
-
-const parent = React.createElement("div", {id: "parent"},[
-                React.createElement("div", {id: "child"}, 
-                [React.createElement("h1", {id: "heading"}, "Nested H1 🚀"), 
-                React.createElement("h2", {}, "Nested H2")
-                ]),
-
-                React.createElement("div", {id: "child2"}, 
-                [React.createElement("h1", {id: "heading2"}, "Nested Child H1"), 
-                React.createElement("h2", {}, "Nested H2")])
-            ]);
-
-console.log('parent', parent);
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent);
+root.render(<HeadingJSXComponentShorthand2 />); // replace any content inside the root
