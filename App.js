@@ -1,11 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 
+
+// react element
+
+const JsxheadingElem =  (<h1 className="head"> 
+                    Vanakkam React from JSX 🚀
+                    </h1>);
+
 // JSX Heading - JSX is not HTML in javascript - converted to component now
 
 const Jsxheading = () => (<h1 className="head"> 
                     Vanakkam React from JSX 🚀
                     </h1>);
+
+
 
 // React funtional components
 const HeadingComponent = () => {
@@ -22,15 +31,19 @@ const NormalJSComp = function () {
         </h1>
     )
 }
-
+let jsValue = 2000;
 const HeadingJSXComponentShorthand2 = () => (
     <div id="container">
         {/* Component composition */}
         <Jsxheading />
         <HeadingComponent / >
         <HeadingJSXComponentShorthand />
+       
         <h1 className="shorthand2">Vanakkam react functional component shorthand2</h1>
         <NormalJSComp />
+        <h2>{jsValue}</h2>
+        {JsxheadingElem}
+        {HeadingJSXComponentShorthand()} {/*we can call function like a component*/}
     </div>
 );
 
