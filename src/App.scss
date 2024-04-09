@@ -1,0 +1,46 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0 10px; */
+    border-bottom: 1px solid;
+    align-items: center;
+
+    .logo-img {
+        width: 100px;
+    }
+
+    .nav {
+        ul {
+            display: flex;
+            list-style-type: none;
+            
+            li {
+                padding: 10px;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.body {
+    .restContainer {
+        display: flex;
+        flex-wrap: wrap;
+        .restoCard {
+            padding: 5px;
+            border: 1px solid transparent;
+            margin: 5px;
+            
+            &:hover {
+                border: 1px solid #000;
+                cursor: pointer;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
