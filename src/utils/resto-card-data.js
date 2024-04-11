@@ -1,147 +1,20 @@
-const restoData = [
-                {
-                    "info": {
-                    "id": "485445",
-                    "name": "Chinese Wok",
-                    "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
-                    "locality": "Old Mahabalipuram Road OMR",
-                    "areaName": "Old Mahabalipuram Road OMR",
-                    "costForTwo": "₹250 for two",
-                    "cuisines": [
-                        "Chinese",
-                        "Asian",
-                        "Tibetan",
-                        "Desserts"
-                    ],
-                    "avgRating": 3.9,
-                    "parentId": "61955",
-                    "avgRatingString": "3.9",
-                    "totalRatingsString": "1K+",
-                    "sla": {
-                        "deliveryTime": 28,
-                        "lastMileTravel": 4.2,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "25-30 mins",
-                        "lastMileTravelString": "4.2 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                    },
-                    "availability": {
-                        "nextCloseTime": "2024-04-05 02:00:00",
-                        "opened": true
-                    },
-                    "badges": {},
-                    "isOpen": true,
-                    "type": "F",
-                    "badgesV2": {
-                        "entityBadges": {
-                        "imageBased": {},
-                        "textBased": {},
-                        "textExtendedBadges": {}
-                        }
-                    },
-                    "aggregatedDiscountInfoV3": {
-                        "header": "ITEMS",
-                        "subHeader": "AT ₹179"
-                    },
-                    "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                    },
-                    "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                        "lottie": {},
-                        "video": {}
-                        }
-                    },
-                    "reviewsSummary": {},
-                    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                    "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                    "context": "seo-data-c845488f-0b6d-467c-a21b-d942868754ce"
-                    },
-                    "cta": {
-                    "link": "https://www.swiggy.com/restaurants/chinese-wok-old-mahabalipuram-road-omr-chennai-485445",
-                    "text": "RESTAURANT_MENU",
-                    "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
-                },
+let restoData = [
                 {
                     "info": {
                     "id": "800999",
                     "name": "BOX8 - Desi Meals",
                     "cloudinaryImageId": "f2e318330e1bf3ba0830b18ca03eff3f",
-                    "locality": "Sholinganallur",
-                    "areaName": "Parameswaran Nagar",
                     "costForTwo": "₹250 for two",
                     "cuisines": [
                         "Biryani",
                         "Thalis",
                         "Home Food"
                     ],
-                    "avgRating": 4.3,
-                    "parentId": "10655",
-                    "avgRatingString": "4.3",
-                    "totalRatingsString": "50+",
+                    "avgRating": 3.3,
                     "sla": {
                         "deliveryTime": 20,
-                        "lastMileTravel": 2.7,
-                        "serviceability": "SERVICEABLE",
-                        "slaString": "15-25 mins",
-                        "lastMileTravelString": "2.7 km",
-                        "iconType": "ICON_TYPE_EMPTY"
-                    },
-                    "availability": {
-                        "nextCloseTime": "2024-04-05 02:00:00",
-                        "opened": true
-                    },
-                    "badges": {},
-                    "isOpen": true,
-                    "type": "F",
-                    "badgesV2": {
-                        "entityBadges": {
-                        "imageBased": {},
-                        "textBased": {},
-                        "textExtendedBadges": {}
-                        }
-                    },
-                    "aggregatedDiscountInfoV3": {
-                        "header": "ITEMS",
-                        "subHeader": "AT ₹179"
-                    },
-                    "orderabilityCommunication": {
-                        "title": {},
-                        "subTitle": {},
-                        "message": {},
-                        "customIcon": {}
-                    },
-                    "differentiatedUi": {
-                        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                        "differentiatedUiMediaDetails": {
-                        "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                        "lottie": {},
-                        "video": {}
-                        }
-                    },
-                    "reviewsSummary": {},
-                    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-                    "isNewlyOnboarded": true,
-                    "restaurantOfferPresentationInfo": {}
-                    },
-                    "analytics": {
-                    "context": "seo-data-c845488f-0b6d-467c-a21b-d942868754ce"
-                    },
-                    "cta": {
-                    "link": "https://www.swiggy.com/restaurants/box8-desi-meals-sholinganallur-parameswaran-nagar-chennai-800999",
-                    "text": "RESTAURANT_MENU",
-                    "type": "WEBLINK"
-                    },
-                    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+                    }
+                    }
                 },
                 {
                     "info": {
@@ -303,7 +176,7 @@ const restoData = [
                     "cuisines": [
                         "Chinese"
                     ],
-                    "avgRating": 4,
+                    "avgRating": 3.8,
                     "parentId": "1636",
                     "avgRatingString": "4.0",
                     "totalRatingsString": "10K+",
@@ -551,7 +424,7 @@ const restoData = [
                         "Snacks",
                         "Fast Food"
                     ],
-                    "avgRating": 4.2,
+                    "avgRating": 3.6,
                     "parentId": "547",
                     "avgRatingString": "4.2",
                     "totalRatingsString": "1K+",

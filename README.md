@@ -16,3 +16,8 @@
 - Error Handling - UI desplaying of errors
 - Tree Shaking - Remove unused code
 - Diff bundle dev and prod
+
+# ReactHooks
+(Normal JS Utility functions)
+- useState() - Super powerful react State variables
+- useEffect()

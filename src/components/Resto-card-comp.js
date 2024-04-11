@@ -1,6 +1,6 @@
 import { CDN_URL } from "../utils/constant";
 
-const styleCard = {backgroundColor: "#f0f0f0"};
+// const styleCard = {backgroundColor: "#f0f0f0"};
 
 const RestoCardComp = (propers) => {
     const {resturantData} = propers; //need to do this with prop name we have in the component where we used
@@ -20,7 +20,7 @@ const RestoCardComp = (propers) => {
             <div className="ratings">{avgRating}*</div>
             <div className="delTime">{deliveryTime} mins</div>
         </div>
-    )
+    );
 };
 
 export default RestoCardComp;

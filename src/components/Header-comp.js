@@ -15,6 +15,6 @@ const HeaderComp = () => {
                     </ul>
                 </div>
             </div>
-        )
+        );
 }
 export default HeaderComp;

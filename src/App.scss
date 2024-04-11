@@ -24,6 +24,18 @@
 }
 
 .body {
+    .searchBar {
+        margin: 10px;
+        button.searchBtn {
+            margin: 10px;
+            padding: 10px;
+            background-color: #1091a5;
+            color: #fff;
+            outline: none;
+            border: medium none #fff;
+            cursor: pointer;
+        }
+    }
     .restContainer {
         display: flex;
         flex-wrap: wrap;
