@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComp from "./components/header-comp";
+import HeaderComp from "./components/Header-comp";
 import BodyComp from "./components/Body-comp";
 
 const AppLayout = () => {
