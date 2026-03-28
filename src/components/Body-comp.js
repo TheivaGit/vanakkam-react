@@ -1,75 +1,109 @@
-// import restoData from "../utils/resto-card-data";
 import RestoCardComp from "./Resto-card-comp";
 import { useEffect, useState } from "react";
 import ShimmerUI from "./shimmer-ui";
 
 const BodyComp = () => {
-  // local state variable
   const [restoDataList, setRestoDataList] = useState([]);
-  let restData;
+  const [filteredArray, setFilteredArr] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+
+    const fetchResto = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const resp = await fetch("https://pastebin.com/raw/0QcdEDBL", { signal });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const resJson = await resp.json();
+
+        // try a few likely locations for the restaurants array
+        const tryPaths = [
+          (obj) =>
+            obj?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants,
+          (obj) =>
+            obj?.data?.cards?.[2]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants,
+          (obj) =>
+            obj?.data?.cards?.find(
+              (c) =>
+                c?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            )?.card?.card?.gridElements?.infoWithStyle?.restaurants,
+        ];
+
+        let restaurants;
+        for (const getPath of tryPaths) {
+          restaurants = getPath(resJson);
+          if (Array.isArray(restaurants) && restaurants.length > 0) break;
+        }
+
+        restaurants = Array.isArray(restaurants) ? restaurants : [];
+
+        setRestoDataList(restaurants);
+        setFilteredArr(restaurants);
+      } catch (err) {
+        if (err.name !== "AbortError") {
+          setError(err.message || "Failed to fetch");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchResto();
+
+    return () => controller.abort();
   }, []);
 
-  const fetchResto = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  const handleSearch = () => {
+    const q = (searchText || "").trim().toLowerCase();
+    if (!q) {
+      setFilteredArr(restoDataList);
+      return;
+    }
+    const filteredList = (restoDataList || []).filter((elm) =>
+      (elm?.info?.name || "").toLowerCase().includes(q)
     );
-    console.log("data", data);
-    const resJson = await data.json();
-
-    restData =
-      resJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-
-    setRestoDataList(restData);
-
-    console.log("resJson", resJson, restData);
+    setFilteredArr(filteredList);
   };
 
-  console.log("restoDataList", restoDataList, restData);
+  if (loading) return <ShimmerUI />;
+  if (error) return <div className="body">Error: {error}</div>;
 
-  //   if(restoDataList.length <= 0) { // not good ux practice
-  //     return <h1>Loading...</h1>
-  //   }
-
-  return restoDataList?.length <= 0 ? (
-    <ShimmerUI />
-  ) : (
+  return (
     <div className="body">
       <div className="searchBar">
-        <button
-          className="searchBtn"
-          onClick={() => {
-            console.log("btn-clicked");
-            const filteredArr = restoDataList?.filter(
-              (elm) => elm?.info?.avgRating > 4.2
-            );
-            setRestoDataList(filteredArr); //update the list => in normal function we do list.push or etc here we we do with hooks(normal js function given by react developers)
+        <input
+          type="text"
+          className="searchBox"
+          placeholder="Search restaurants..."
+          value={searchText}
+          onChange={(ev) => setSearchText(ev.target.value)}
+          onKeyDown={(ev) => {
+            if (ev.key === "Enter") handleSearch();
           }}
-        >
-          Top Restaurants
-        </button>
-        <button
-          className="searchBtn"
-          onClick={() => {
-            console.log("btn-clicked");
-            const filteredArr = restoDataList;
-            setRestoDataList(restoDataList); //update the list => in normal function we do list.push or etc here we we do with hooks(normal js function given by react developers)
-          }}
-        >
-          Clear filter
+        />
+        <button className="searchBtn" onClick={handleSearch}>
+          Search
         </button>
       </div>
+
       <div className="restContainer">
-        {restoDataList?.map((restaurant) => (
-              <RestoCardComp
-                key={restaurant?.info?.id}
-                restaurantData={restaurant}
-              />
-            ))
-          }
+        {filteredArray && filteredArray.length > 0 ? (
+          filteredArray.map((restaurant) => (
+            <RestoCardComp
+              key={restaurant?.info?.id ?? restaurant?.info?.name}
+              restaurantData={restaurant}
+            />
+          ))
+        ) : (
+          <div>No restaurants found.</div>
+        )}
       </div>
     </div>
   );

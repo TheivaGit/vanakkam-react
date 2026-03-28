@@ -21,3 +21,7 @@
 (Normal JS Utility functions)
 - useState() - Super powerful react State variables
 - useEffect()
+
+# CORS issue on mock API call from namaste dev 
+- Add extension in the browser and swithc on it
+- Extension : Allow CORS: Access-Control-Allow-Origin 
