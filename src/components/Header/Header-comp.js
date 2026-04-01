@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LOGO_URL } from "../utils/constant";
+import { LOGO_URL } from "../../utils/constant";
 
 const HeaderComp = () => {
   const [menuBtnName, setMenuBtnName] = useState("login");
@@ -13,7 +13,7 @@ const HeaderComp = () => {
   return (
     <div className="header">
       <div className="logo">
-        <img className="logo-img" src={LOGO_URL} />
+        <img className="logo-img" src={LOGO_URL} alt="Logo" />
       </div>
       <div className="nav">
         <ul>
@@ -27,4 +27,5 @@ const HeaderComp = () => {
     </div>
   );
 };
+
 export default HeaderComp;

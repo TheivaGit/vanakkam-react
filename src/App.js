@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComp from "./components/Header-comp";
-import BodyComp from "./components/Body-comp";
+import HeaderComp from "./components/Header/Header-comp";
+import BodyComp from "./components/Body/Body-comp";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./components/About-comp";
-import Contact from "./components/Contact-comp";
-import Error from "./components/Error-comp";
+import About from "./components/About/About-comp";
+import Contact from "./components/Contact/Contact-comp";
+import Error from "./components/Error/Error-comp";
 
 const AppLayout = () => {
   return (

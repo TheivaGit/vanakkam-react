@@ -1,6 +1,6 @@
-import RestoCardComp from "./Resto-card-comp";
+import RestoCardComp from "../RestoCard/Resto-card-comp";
 import { useEffect, useState } from "react";
-import ShimmerUI from "./shimmer-ui";
+import ShimmerUI from "../ShimmerUI/shimmer-ui";
 
 const BodyComp = () => {
   const [restoDataList, setRestoDataList] = useState([]);
