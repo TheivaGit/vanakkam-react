@@ -9,6 +9,40 @@ const BodyComp = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // ========== EXAMPLE useEffect 1: Mount/Unmount ==========
+  useEffect(() => {
+    console.log("✅ BodyComp mounted");
+    return () => console.log("❌ BodyComp will unmount");
+  }, []);
+
+  // ========== EXAMPLE useEffect 2: Track searchText ==========
+  useEffect(() => {
+    console.log("🔍 searchText changed to:", searchText);
+  }, [searchText]);
+
+  // ========== EXAMPLE useEffect 3: Track restoDataList ==========
+  useEffect(() => {
+    console.log("📊 restoDataList changed, items count:", restoDataList.length);
+  }, [restoDataList]);
+
+  // ========== EXAMPLE useEffect 4: Track filteredArray ==========
+  useEffect(() => {
+    console.log("📋 filteredArray changed, items count:", filteredArray.length);
+  }, [filteredArray]);
+
+  // ========== EXAMPLE useEffect 5: Interval (cleanup example) ==========
+  useEffect(() => {
+    console.log("⏱️ Interval started");
+    const id = setInterval(() => {
+      console.log("⏳ Interval tick at", new Date().toLocaleTimeString());
+    }, 5000); // every 5 seconds
+
+    return () => {
+      clearInterval(id);
+      console.log("🛑 Interval cleared on unmount");
+    };
+  }, []);
+
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
