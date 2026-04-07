@@ -1,6 +1,7 @@
 import RestoCardComp from "../RestoCard/Resto-card-comp";
 import { useEffect, useState } from "react";
 import ShimmerUI from "../ShimmerUI/shimmer-ui";
+import { Link } from "react-router-dom";
 
 const BodyComp = () => {
   const [restoDataList, setRestoDataList] = useState([]);
@@ -31,17 +32,17 @@ const BodyComp = () => {
   }, [filteredArray]);
 
   // ========== EXAMPLE useEffect 5: Interval (cleanup example) ==========
-  useEffect(() => {
-    console.log("⏱️ Interval started");
-    const id = setInterval(() => {
-      console.log("⏳ Interval tick at", new Date().toLocaleTimeString());
-    }, 5000); // every 5 seconds
+  // useEffect(() => {
+  //   console.log("⏱️ Interval started");
+  //   const id = setInterval(() => {
+  //     console.log("⏳ Interval tick at", new Date().toLocaleTimeString());
+  //   }, 5000); // every 5 seconds
 
-    return () => {
-      clearInterval(id);
-      console.log("🛑 Interval cleared on unmount");
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(id);
+  //     console.log("🛑 Interval cleared on unmount");
+  //   };
+  // }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -130,10 +131,13 @@ const BodyComp = () => {
       <div className="restContainer">
         {filteredArray && filteredArray.length > 0 ? (
           filteredArray.map((restaurant) => (
-            <RestoCardComp
-              key={restaurant?.info?.id ?? restaurant?.info?.name}
-              restaurantData={restaurant}
-            />
+            <Link style={{
+              backgroundColor: "#f0f0f0", width: "23%", textDecoration: "none", color: "#000", border: "1px solid #0000",
+              margin: "5px",
+              padding: "5px"
+            }} to={`/restaurant/${restaurant?.info?.id}`} key={restaurant?.info?.id ?? restaurant?.info?.name}> <RestoCardComp
+                restaurantData={restaurant}
+              /></Link>
           ))
         ) : (
           <div>No restaurants found.</div>

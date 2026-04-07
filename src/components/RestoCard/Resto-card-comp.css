@@ -1,0 +1,54 @@
+.resto-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.resto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.resto-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.resto-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.resto-card-info {
+  padding: 15px;
+}
+
+.resto-card-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.resto-card-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.resto-card-rating {
+  font-size: 14px;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.resto-card-cuisines {
+  font-size: 13px;
+  color: #999;
+  margin-top: 8px;
+}

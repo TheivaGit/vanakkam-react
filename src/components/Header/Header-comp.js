@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LOGO_URL } from "../../utils/constant";
+import { Link } from "react-router-dom";
 
 const HeaderComp = () => {
   const [menuBtnName, setMenuBtnName] = useState("login");
@@ -17,9 +18,9 @@ const HeaderComp = () => {
       </div>
       <div className="nav">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/contact">Contact Us</Link></li>
           <li>Cart</li>
           <button onClick={toggleHeaderBtn}>{menuBtnName}</button>
         </ul>
