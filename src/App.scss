@@ -1,46 +1,96 @@
-
+@keyframes animateShimmer {
+  10% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
 .header {
-    display: flex;
-    justify-content: space-between;
-    /* margin: 0 10px; */
-    border-bottom: 1px solid;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 10px; */
+  border-bottom: 1px solid;
+  align-items: center;
 
-    .logo-img {
-        width: 100px;
-    }
+  .logo-img {
+    width: 100px;
+  }
 
-    .nav {
-        ul {
-            display: flex;
-            list-style-type: none;
-            
-            li {
-                padding: 10px;
-                font-size: 1rem;
-            }
-        }
+  .nav {
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        padding: 10px;
+        font-size: 1rem;
+      }
     }
+  }
 }
 
 .body {
-    .restContainer {
-        display: flex;
-        flex-wrap: wrap;
-        .restoCard {
-            padding: 5px;
-            border: 1px solid transparent;
-            margin: 5px;
-            
-            &:hover {
-                border: 1px solid #000;
-                cursor: pointer;
-            }
-
-            img {
-                width: 100%;
-            }
-        }
+  .searchBar {
+    margin: 10px;
+    button.searchBtn {
+      margin: 10px;
+      padding: 10px;
+      background-color: #1091a5;
+      color: #fff;
+      outline: none;
+      border: medium none #fff;
+      cursor: pointer;
     }
+  }
+  .restContainer {
+    display: flex;
+    flex-wrap: wrap;
+    .restoCard {
+      padding: 5px;
+      border: 1px solid transparent;
+      margin: 5px;
+
+      &:hover {
+        border: 1px solid #000;
+        cursor: pointer;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
+.shimmerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  .shimmerCard {
+    padding: 5px;
+    border: 1px solid transparent;
+    margin: 5px;
+    background-color: #f0f0f0;
+    height: 400px;
+    width: 250px;
+    overflow: hidden;
+
+    div {
+      background-color: #e2e2e2;
+
+      position: relative;
+      height: 20px;
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      &::after {
+        content: "";
+        background-color: #d8d8d8;
+        width: 60px;
+        height: 20px;
+        animation: .5s infinite animateShimmer;
+        position: absolute;
+      }
+    }
+  }
+}

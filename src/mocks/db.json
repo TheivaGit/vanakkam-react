@@ -1,0 +1,125 @@
+{
+  "restaurants": [
+    {
+      "id": 1003414,
+      "name": "Pizza Hut",
+      "cuisines": [
+        "Pizzas"
+      ],
+      "avgRating": 4.5,
+      "deliveryTime": "30 mins",
+      "menu": [
+        {
+          "id": 101,
+          "name": "Margherita Pizza",
+          "price": 250,
+          "description": "Classic cheese pizza"
+        },
+        {
+          "id": 102,
+          "name": "Pepperoni Pizza",
+          "price": 350,
+          "description": "Pizza with pepperoni"
+        }
+      ]
+    },
+    {
+      "id": 234875,
+      "name": "Adil Hotel",
+      "cuisines": [
+        "North Indian",
+        "Biryani"
+      ],
+      "avgRating": 4.7,
+      "deliveryTime": "35 mins",
+      "menu": [
+        {
+          "id": 201,
+          "name": "Chicken Biryani",
+          "price": 300,
+          "description": "Aromatic chicken biryani"
+        },
+        {
+          "id": 202,
+          "name": "Mutton Biryani",
+          "price": 400,
+          "description": "Tender mutton biryani"
+        }
+      ]
+    },
+    {
+      "id": 630193,
+      "name": "Champaran  Handi Restaurant",
+      "cuisines": [
+        "North Indian"
+      ],
+      "avgRating": 4.3,
+      "deliveryTime": "40 - 45 mins",
+      "menu": [
+        {
+          "id": 201,
+          "name": "Chicken Biryani",
+          "price": 300,
+          "description": "Aromatic chicken biryani"
+        },
+        {
+          "id": 202,
+          "name": "Mutton Biryani",
+          "price": 400,
+          "description": "Tender mutton biryani"
+        }
+      ]
+    },
+    {
+      "id": 618037,
+      "name": "Jai Ganesh Bhojnalaya",
+      "cuisines": [
+        "North Indian",
+        "South Indian",
+        "Indian",
+        "Chinese"
+      ],
+      "avgRating": 4.1,
+      "deliveryTime": "42 mins",
+      "menu": [
+        {
+          "id": 201,
+          "name": "Chicken Biryani",
+          "price": 300,
+          "description": "Aromatic chicken biryani"
+        },
+        {
+          "id": 202,
+          "name": "Mutton Biryani",
+          "price": 400,
+          "description": "Tender mutton biryani"
+        }
+      ]
+    },
+    {
+      "id": 151515,
+      "name": "Gupta Bhojnalay",
+      "cuisines": [
+        "Fast Food",
+        "Indian",
+        "Beverages"
+      ],
+      "avgRating": 4.8,
+      "deliveryTime": "41 mins",
+      "menu": [
+        {
+          "id": 201,
+          "name": "Chicken Biryani",
+          "price": 300,
+          "description": "Aromatic chicken biryani"
+        },
+        {
+          "id": 202,
+          "name": "Mutton Biryani",
+          "price": 400,
+          "description": "Tender mutton biryani"
+        }
+      ]
+    }
+  ]
+}

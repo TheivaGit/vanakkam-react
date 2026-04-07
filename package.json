@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "mock": "json-server --watch src/mocks/db.json --port 3001"
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,14 @@
   "homepage": "https://github.com/TheivaGit/vanakkam-react#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.11.0",
+    "json-server": "^1.0.0-beta.15",
     "parcel": "^2.11.0",
     "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0"
   },
   "browserslist": [
     "last 5 version"
