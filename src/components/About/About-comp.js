@@ -3,7 +3,8 @@
  * Path: src/components/About-comp.js
  */
 import "./About-comp.css";
-import UserClass from "../User/UserClass";
+// import UserClass from "../User/UserClass";
+import User from "../User/User";
 import { Component } from "react"; // Destructuring import for Component base class from React
 
 
@@ -32,7 +33,7 @@ export default class AboutClass extends Component {
                     app, authorship, license, or links to documentation and source code.
                 </p>
                 <h2>Team Members</h2>
-                <UserClass name="Theiva (class)" location="bangalore" contact="5678917772" />
+                <User name="Theiva (class)" location="bangalore" contact="5678917772" />
             </section>
         );
     }

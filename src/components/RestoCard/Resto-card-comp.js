@@ -4,7 +4,7 @@ import "./resto-card-comp.css";
 
 const RestoCardComp = (propers) => {
   const { restaurantData } = propers; //need to do this with prop name we have in the component where we used
-  console.log("restaurantData in resto card component", restaurantData);
+  // console.log("restaurantData in resto card component", restaurantData);
   const {
     name = "",
     cuisines = "",
