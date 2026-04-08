@@ -1,19 +1,32 @@
 import React from "react";
+import { GIT_HUB_USER_API_URL } from "../../utils/constant";
 
 class UserClass extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { count: 0 };
-        console.log(`${props?.name || "Unknown"} constructor called with props:`);
+        this.state = {
+            userData: {
+                name: "Muthu Pandi",
+                location: "Madurai",
+                contact: "9876543210"
+            }
+        };
+        // console.log(`${props?.name || "Unknown"} constructor called with props:`);
     }
 
-    componentDidMount() {
-        console.log(`${this.props?.name || "Unknown"} componentDidMount called`);
+    async componentDidMount() {
+        // console.log(`${this.props?.name || "Unknown"} componentDidMount called`);
+
+        const data = await fetch(GIT_HUB_USER_API_URL);
+        const json = await data.json();
+        console.log(`${this.props?.name || "Unknown"} fetched data:`, json);
+        this.setState({ userData: json });
+
     }
 
     render() {
-        console.log(`${this.props?.name || "Unknown"} render called with props:`);
-        const { name, location, contact } = this.props;
+        const { name, location, contact, avatar_url  } = this.state.userData;
+
         const style = {
             backgroundColor: "rgba(240, 240, 240, 1)",
             padding: "20px",
@@ -24,12 +37,10 @@ class UserClass extends React.Component {
 
         return (
             <div className="userCard" style={style}>
+                <img src={avatar_url} alt="User Avatar" style={{ width: "100%", borderRadius: "50%" }} />
                 <h2>Name: {name}</h2>
                 <h3>Location: {location}</h3>
                 <h4>Contact: {contact}</h4>
-                <button onClick={() => this.setState({ count: this.state.count + 1 })}>
-                    Clicked {this.state.count} times
-                </button>
             </div>
         );
     }

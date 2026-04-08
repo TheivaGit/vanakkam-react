@@ -10,15 +10,15 @@ import { Component } from "react"; // Destructuring import for Component base cl
 export default class AboutClass extends Component {
     constructor(props) {
         super(props);
-        console.log("parent constructor called");
+        // console.log("parent constructor called");
     }
 
     componentDidMount() {
-        console.log("parent componentDidMount called");
+        // console.log("parent componentDidMount called");
     }
 
     render() {
-        console.log("parent render called");
+        // console.log("parent render called");
         return (
             <section className="about">
                 <h2>About This Project</h2>
@@ -33,8 +33,6 @@ export default class AboutClass extends Component {
                 </p>
                 <h2>Team Members</h2>
                 <UserClass name="Theiva (class)" location="bangalore" contact="5678917772" />
-                <UserClass name="Theiva (class) - 1" location="madurai" contact="987655" />
-                <UserClass name="Theiva (class) - 2" location="Thiruvarai" contact="65656565" />
             </section>
         );
     }
