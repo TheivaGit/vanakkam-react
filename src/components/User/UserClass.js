@@ -15,17 +15,30 @@ class UserClass extends React.Component {
     }
 
     async componentDidMount() {
-        // console.log(`${this.props?.name || "Unknown"} componentDidMount called`);
+        console.log(`componentDidMount called`);
 
         const data = await fetch(GIT_HUB_USER_API_URL);
         const json = await data.json();
-        console.log(`${this.props?.name || "Unknown"} fetched data:`, json);
+        // console.log(`${this.props?.name || "Unknown"} fetched data:`, json);
         this.setState({ userData: json });
+        console.log(`componentDidMount called end`);
+        this.timerId = setInterval(() => {
+            console.log('vanankam react OP');
+        }, 1000);
 
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate called with props:');
+    }
+
+    componentWillUnmount() {
+        console.log(`componentWillUnmount called`);
+        clearInterval(this.timerId);
+    }   
+
     render() {
-        const { name, location, contact, avatar_url  } = this.state.userData;
+        const { name, location, contact, avatar_url } = this.state.userData;
 
         const style = {
             backgroundColor: "rgba(240, 240, 240, 1)",
